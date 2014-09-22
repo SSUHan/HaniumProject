@@ -144,7 +144,7 @@ public class TimeTableActivity extends ActionBarActivity {
 				int finishHours=Integer.parseInt(st.nextToken());
 				int finishMinute=Integer.parseInt(st.nextToken());
 				int duration=caldur(startHours,startMinute,finishHours,finishMinute);
-				Log.d("sfd",day+" "+subject+" "+startHours+" "+startMinute);
+				Log.d("sfd",color+" "+day+" "+subject+" "+startHours+" "+startMinute);
 				setSubjectName(day-1, subject, startHours, startMinute, duration, color);
 			}
 		}
@@ -153,9 +153,8 @@ public class TimeTableActivity extends ActionBarActivity {
 	Data_LP queryData2(String name,int startHours, int startMinute) {
 		Data_LP data=null;
 		String startTime=startHours+":"+numberTwo(startMinute);
-		String sql = "Select subject, professor,color ,day, classroom,starttime,finishtime from "
+		String sql = "Select subject, professor, day ,  classroom,starttime,finishtime, color from "
 				+ name+" where starttime = "+"'"+startTime+"'";
-		Log.d("s",sql);
 
 		Cursor cursor = db.rawQuery(sql, null);
 		if (cursor != null) {
@@ -163,13 +162,12 @@ public class TimeTableActivity extends ActionBarActivity {
 				cursor.moveToNext();
 				String subject = cursor.getString(0);
 				String professor=cursor.getString(1);
-				int color=cursor.getInt(2);
-				int day=cursor.getInt(3);
-				String classroom=cursor.getString(4);
-				String starttime=cursor.getString(5);
-				String finishtime=cursor.getString(6);
+				int day=cursor.getInt(2);
+				int color=cursor.getInt(6);
+				String classroom=cursor.getString(3);
+				String starttime=cursor.getString(4);
+				String finishtime=cursor.getString(5);
 				data=new Data_LP(subject,professor,color,day,classroom,starttime,finishtime);
-				
 			}
 		}
 		return data;

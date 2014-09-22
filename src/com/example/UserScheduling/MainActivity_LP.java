@@ -408,7 +408,6 @@ import android.widget.Toast;
     			day[i].setBackgroundColor(Color.GREEN);
     		day[inte.getExtras().getInt("day")-1].setBackgroundColor(Color.RED);
     		lastData.day=inte.getExtras().getInt("day");
-    		Log.d("fdkj",""+inte.getExtras().getInt("day"));
     		plusBtn.setVisibility(View.VISIBLE);
     		saveBtn.setVisibility(View.VISIBLE);
     	}
@@ -425,8 +424,9 @@ import android.widget.Toast;
     			day[i].setBackgroundColor(Color.GREEN);
     		day[inte.getExtras().getInt("day")-1].setBackgroundColor(Color.RED);
     		lastData.day=inte.getExtras().getInt("day");
+    		Log.d("fdkj",""+inte.getExtras().getInt("color"));
     		mainColor.setBackground(color[inte.getExtras().getInt("color")-1].getBackground());
-			lastData.color=inte.getExtras().getInt("day");
+			lastData.color=inte.getExtras().getInt("color");
     		deleteBtn.setVisibility(View.VISIBLE);
     		changeBtn.setVisibility(View.VISIBLE);
     	}

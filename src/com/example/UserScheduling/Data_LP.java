@@ -21,7 +21,7 @@ public class Data_LP
 	{
 		subjectName=a;
 		professorName=b;
-		color=3;
+		color=c;
 		day=d;
 		classNumber=e;
 		startTime=f;
